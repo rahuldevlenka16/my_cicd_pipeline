@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'your-dockerhub-username/my-java-app'
+        DOCKER_IMAGE = 'rahuldev/my-java-app'
         // DOCKER_CREDENTIALS = 'dockerhub-credentials' // Jenkins credentials ID
         // KUBECTL = '/usr/local/bin/kubectl'
     }
