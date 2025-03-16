@@ -9,39 +9,39 @@ pipeline {
 
     stages {
   
-        stage('Build') {
-            steps {
-                sh 'mvn clean package -DskipTests'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'mvn clean package -DskipTests'
+        //     }
+        // }
 
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'mvn test'
+        //     }
+        // }
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    sh """
-                    docker build -t ${DOCKER_IMAGE}:latest .
-                    """
-                }
-            }
-        }
-
-
-        // stage('Deploy to Minikube') {
+        // stage('Build Docker Image') {
         //     steps {
         //         script {
         //             sh """
-        //             kubectl apply -f deployment.yaml
-        //             kubectl rollout status deployment my-java-app
+        //             docker build -t ${DOCKER_IMAGE}:latest .
         //             """
         //         }
         //     }
         // }
+
+
+        stage('Deploy to Minikube') {
+            steps {
+                script {
+                    sh """
+                    kubectl apply -f deployment.yaml
+                    kubectl rollout status deployment my-java-app
+                    """
+                }
+            }
+        }
     }
 
     post {
