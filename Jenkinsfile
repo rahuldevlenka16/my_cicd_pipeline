@@ -32,16 +32,16 @@ pipeline {
         }
 
 
-        stage('Deploy to Minikube') {
-            steps {
-                script {
-                    sh """
-                    kubectl apply -f deployment.yaml
-                    kubectl rollout status deployment my-java-app
-                    """
-                }
-            }
-        }
+        // stage('Deploy to Minikube') {
+        //     steps {
+        //         script {
+        //             sh """
+        //             kubectl apply -f deployment.yaml
+        //             kubectl rollout status deployment my-java-app
+        //             """
+        //         }
+        //     }
+        // }
     }
 
     post {
