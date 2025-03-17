@@ -33,7 +33,10 @@ kubectl commands:
     
     go run the app:
         localhost:<NodePort>
-
+    
+    Extra:
+        kubectl port-forward service/my-java-app-service 8081:8081 
+        # this will let access the service in port 8081 instead of node port
 
 
 
