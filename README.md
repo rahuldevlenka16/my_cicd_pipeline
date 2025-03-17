@@ -24,11 +24,10 @@ to run the docker app:
 
 kubectl commands:
 
-    kubectl apply -f deploy-my-java-app.yaml
+    kubectl apply -f my-java-deployment.yaml #it contains for deployment and service config
+
     
     kubectl get pods
-    
-    kubectl expose deployment my-java-app --type=NodePort --port=80
     
     kubectl get svc
     
