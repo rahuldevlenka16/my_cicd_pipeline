@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    kubectl apply -f deployment.yaml
+                    kubectl apply -f my-java-deployment.yaml
                     kubectl rollout status deployment my-java-app
                     """
                 }
