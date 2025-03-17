@@ -1,1 +1,46 @@
 # my_cicd_pipeline
+
+image build:
+
+    docker build -t my-java-app .
+
+    docker tag my-java-app rahuldevsecops/my-java-app:latest
+
+
+docker hub command:
+    
+    docker login -u rahuldevsecops
+
+    generate app pass and use it 
+
+    docker push rahuldevsecops/my-java-app:latest
+
+to run the docker app:
+    
+    docker run -rm -p 8080:80 rahuldevsecops/my-java-app:latest
+
+
+--------------------------------------------------------------
+
+kubectl commands:
+
+    kubectl apply -f deploy-my-java-app.yaml
+    
+    kubectl get pods
+    
+    kubectl expose deployment my-java-app --type=NodePort --port=80
+    
+    kubectl get svc
+    
+    go run the app:
+        localhost:<NodePort>
+
+
+
+
+cleaning:
+
+    kubectl delete deployments <deplyoment-name>
+    kubectl delete deployments --all
+    kubectl delete service <service-name>
+    kubectl delete service --all
